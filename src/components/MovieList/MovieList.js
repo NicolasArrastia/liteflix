@@ -14,7 +14,7 @@ export default function MovieList() {
     const [movieList,setMovieList] = useState([]);
     const [myMovies, setMyMovies] = useState([]);
     const [category, setCategory] = useState(0);
-    const categories = ['Popular','Mis películas']
+    const categories = ['Populares','Mis películas']
 
     useEffect(() => {
         fetch(MOVIES)
@@ -57,11 +57,12 @@ export default function MovieList() {
             <span>
                 <span className="category-selector" onClick={toggle}>
                     ver: 
-                    {(category)?<span className="category-selector__category">mis películas</span>:<span className="category-selector__category">popular</span>}
+                    <span className="category-selector__category">{categories[category]}</span>
                     <span id="category_arrow" className="category-selector__arrow"></span>
                 </span>
             </span>
             <ul className="category-list" id="category_list">
+                <div className="category-list__arrow"></div>
                 {categories.map((data,i)=>{
                     return(
                         <li key={i} onClick={(event)=>changeCategory(i)}>

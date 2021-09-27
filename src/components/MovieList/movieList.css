@@ -59,12 +59,15 @@
 }
 
 .category-list {
+  position: relative;
   height: 0;
-  width: 300px;
-  padding: 20px;
+  width: 220px;
+  padding: 0px;
+  margin: 15px;
   background-color: transparent;
   -webkit-transition: .4s ease;
   transition: .4s ease;
+  overflow: hidden;
 }
 
 .category-list li {
@@ -81,14 +84,39 @@
   background-color: transparent;
 }
 
+.category-list__arrow {
+  -webkit-transform: rotate(45deg) translateY(0%);
+          transform: rotate(45deg) translateY(0%);
+}
+
 .category-list--active {
+  overflow: visible;
   margin: 15px 0;
   background-color: #242424;
   height: auto;
+  padding: 20px;
   -webkit-transition: .4s ease .2s;
   transition: .4s ease .2s;
+  display: block;
   -webkit-transition: margin .2 ease .5s;
   transition: margin .2 ease .5s;
+  -webkit-box-shadow: 0 0 15px -5px black;
+          box-shadow: 0 0 15px -5px black;
+}
+
+.category-list--active .category-list__arrow {
+  display: block;
+  position: absolute;
+  z-index: 30000;
+  top: 5px;
+  right: 20%;
+  width: 20px;
+  height: 20px;
+  background-color: #242424;
+  -webkit-transform: rotate(45deg) translateY(-50%) translateX(-50%);
+          transform: rotate(45deg) translateY(-50%) translateX(-50%);
+  -webkit-transition: .5s ease .5s;
+  transition: .5s ease .5s;
 }
 
 .category-list--active * {
@@ -102,10 +130,6 @@
 
 .category-list--active .check-icon * {
   background-color: white;
-}
-
-.category-list--active {
-  display: block;
 }
 
 .rotate {
@@ -142,5 +166,17 @@
 .check-icon > :nth-child(2) {
   height: 80%;
   width: 2px;
+}
+
+@media (max-width: 768px) {
+  .movie-list {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .category-list__arrow {
+    display: none;
+  }
 }
 /*# sourceMappingURL=movieList.css.map */

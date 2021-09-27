@@ -1,8 +1,9 @@
 .movie-container {
-  height: 100px;
-  width: clamp(250px, 20vw, 500px);
-  height: clamp(166.6px, 13.3px, 333px);
+  width: clamp(250px, 15vw, 500px);
+  height: clamp(166.6px, 10vw, 333px);
   border-radius: 5px;
+  -webkit-box-shadow: 0 0 15px -5px black;
+          box-shadow: 0 0 15px -5px black;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -83,5 +84,12 @@
   height: 100%;
   -webkit-transition: .5s ease;
   transition: .5s ease;
+}
+
+@media (max-width: 768px) {
+  .movie-container {
+    width: clamp(300px, 60vw, 600px);
+    height: clamp(200px, 40vw, 400px);
+  }
 }
 /*# sourceMappingURL=movie.css.map */

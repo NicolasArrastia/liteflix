@@ -39,6 +39,7 @@ export default function App() {
         <Header></Header>
         <div className="background-image">
           <img src={movieImage} alt={movieName}/>
+          <div></div>
         </div>
         <main>
           <MainMovie movieTitle={movieName}></MainMovie>

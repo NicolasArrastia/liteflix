@@ -1,6 +1,6 @@
 .main-movie {
   margin-top: 40vh;
-  width: clamp(600px, 60%, 1000px);
+  width: clamp(400px, 60%, 1000px);
 }
 
 .main-movie__original {
@@ -16,5 +16,34 @@
   color: aqua;
   font-weight: 700;
   letter-spacing: .5rem;
+}
+
+.main-movie__options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .main-movie {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .main-movie__options {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 /*# sourceMappingURL=mainMovie.css.map */
