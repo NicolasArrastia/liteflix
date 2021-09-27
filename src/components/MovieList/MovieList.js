@@ -42,7 +42,7 @@ export default function MovieList() {
         <div>
             <span>
                 <span className="category-selector" onClick={toggle}>
-                    ver: {(category)?<span>mis películas</span>:<span>popular</span>}
+                    ver: {(category)?<span className="category-selector__category">mis películas</span>:<span className="category-selector__category">popular</span>}<span className="category-selector__arrow"></span>
                 </span>
             </span>
             <ul className="category-list" id="category_selector">

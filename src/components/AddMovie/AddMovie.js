@@ -8,7 +8,6 @@ export default function AddMovie() {
         e.preventDefault()
         const element=document.getElementById('upload_movie')
         element.classList.toggle('upload-movie--active')
-        // console.log(element)
     }
     return (
         <div onClick={toggleAddMovie} className="add-movie">

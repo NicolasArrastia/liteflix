@@ -6,7 +6,7 @@ import './notifications.css'
 export default function Notifications() {
     return (
         <div className="notification-icon">
-            <img src="./img/bell.svg"/>
+            <img src="./img/bell.svg" alt="profile"/>
         </div>
     )
 }

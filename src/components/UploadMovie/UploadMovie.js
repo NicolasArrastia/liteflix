@@ -31,7 +31,7 @@ export default function MyDropzone() {
         let data = localStorage.getItem('movies');
         // console.log(files)
         if( image === '' || movieTitle===''){
-            console.log('ingrese archvo y título')
+            alert('debe ingresar título e imagen')
         }
         else{
             let movie = {
@@ -45,17 +45,28 @@ export default function MyDropzone() {
             console.log('enviado')
         }
     }
+
+    function closeWindow (e){
+        e.preventDefault()
+        const element=document.getElementById('upload_movie')
+        element.classList.toggle('upload-movie--active')
+    }
     
     return (
         <div id="upload_movie" className="upload-movie">
-            <div {...getRootProps()}>
-                <input {...getInputProps()} />
-                <p>Drag 'n' drop some files here, or click to select files</p>
-                <span>{fileName}</span>
+            <div className="upload-movie__window">
+                <div className="plus-icon" onClick={closeWindow}></div>
+                <p className="upload-movie__title">Agregar película</p>
+                <div className="upload-movie__dropzone" {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    <img src="./img/clip.svg" alt="clip"/>
+                    <p><span style={{fontWeight:'700'}}>Agrega un archivo</span> o arrastralo y soltalo aquí</p>
+                    {/* <span>{fileName}</span> */}
+                </div>
+                {}
+                <input id="movie_title" type="text" placeholder="título"></input>
+                <div className="upload-movie__send" onClick={sendMovie}>Subir película</div>
             </div>
-            {}
-            <input id="movie_title" type="text" placeholder="título"></input>
-            <div onClick={sendMovie}>enviar</div>
         </div>
     )
 }
