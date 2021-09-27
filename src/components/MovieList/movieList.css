@@ -1,0 +1,10 @@
+.category-list {
+  visibility: hidden;
+  border: 1px dashed blue;
+  border-radius: 10px;
+}
+
+.category-list--active {
+  display: block;
+}
+/*# sourceMappingURL=movieList.css.map */

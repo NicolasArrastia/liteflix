@@ -1,0 +1,17 @@
+.pop-up {
+  color: #fff;
+  background-color: #242424;
+  border: 1px solid #fff;
+  display: none;
+}
+
+.pop-up--active {
+  display: block;
+}
+
+.pop-up .dropzone {
+  border: 4px double #ff9c9c;
+  margin: 5px;
+  padding: 5px;
+}
+/*# sourceMappingURL=popUp.css.map */
