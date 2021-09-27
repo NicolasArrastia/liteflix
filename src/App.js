@@ -28,6 +28,7 @@ export default function App() {
       console.log(err);
       setMovieName('Error')
     })
+
   }, [])
 
 

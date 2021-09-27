@@ -3,6 +3,8 @@ import {useDropzone} from 'react-dropzone'
 
 // Components
 import Loading from '../Loading/Loading';
+import Liteflix from '../Liteflix/Liteflix'
+import Profile from '../Profile/Profile'
 
 // Styles
 import './uploadMovie.css'
@@ -14,19 +16,24 @@ export default function MyDropzone() {
     
     const onDrop = useCallback((acceptedFiles) => {
         acceptedFiles.forEach((file) => {
+            setLoading(0)
             setLoading(1);
             const loadingElement = document.getElementById('progress_bar');
             const reader = new FileReader()
-            reader.onabort = () => console.log('file reading was aborted')
+            reader.onabort = () => {
+                setIsError(1)
+                loadingElement.style.animation="errorAnimation 2s ease 0s 1"
+                console.log('file reading was aborted')
+            }
             reader.onerror = () => {
                 setIsError(1)
-                loadingElement.style.animation="errorAnimation 1.5s ease 0s 1"
+                loadingElement.style.animation="errorAnimation 2s ease 0s 1"
                 console.log('file reading has failed')
                 
             }
             reader.onload = () => {
-                // loading animation to give feedback to user
-                loadingElement.style.animation="loadingAnimation 1.5s ease 0s 1";
+                // loading animation to give feedback to the user
+                loadingElement.style.animation="loadingAnimation 2s ease 0s 1";
 
                 /* covert image to base 64 so we can save it on localStorage */
                 const base64Image = reader.result
@@ -43,18 +50,22 @@ export default function MyDropzone() {
         let movieList;
         let data = localStorage.getItem('movies');
 
-        if( (image === '' || isError) || movieTitle===''){
-            alert('debe ingresar título e imagen')
-        }
-        else{
-            let movie = {
-                'title':movieTitle,
-                'image':image
+        if (isError){
+            alert('hubo un error en la carga del archivo')
+        }else{
+            if( image === '' || movieTitle===''){
+                alert('debe ingresar título e imagen')
             }
-            data===null?movieList=[]:movieList=JSON.parse(data);
-            movieList.push(movie);
-            localStorage.setItem('movies',JSON.stringify(movieList))
-            console.log('enviado')
+            else{
+                let movie = {
+                    'title':movieTitle,
+                    'image':image
+                }
+                data===null?movieList=[]:movieList=JSON.parse(data);
+                movieList.push(movie);
+                localStorage.setItem('movies',JSON.stringify(movieList))
+                alert('pelicula subida con éxito')
+            }
         }
     }
 
@@ -62,16 +73,24 @@ export default function MyDropzone() {
         e.preventDefault()
         const element=document.getElementById('upload_movie')
         element.classList.toggle('upload-movie--active')
+
+        setLoading(0)
+        // const loadBar = document.getElementById('loading-container')
+        // loadBar.classList.toggle('hidden')
     }
     
     return (
         <div id="upload_movie" className="upload-movie">
             <div className="upload-movie__window">
+                <header>
+                    <Liteflix></Liteflix>
+                    <Profile></Profile>
+                </header>
                 <div className="plus-icon" onClick={closeWindow}></div>
                 <p className="upload-movie__title">Agregar película</p>
                 <div id="dropzone" className={"upload-movie__dropzone "+(loadingBar?"loading":null)} {...getRootProps()}>
                     {
-                        (loadingBar)?<Loading></Loading>:null
+                        (loadingBar)?<Loading isError={isError}></Loading>:null
                     }
                     <input {...getInputProps()} />
                     <img src="./img/clip.svg" alt="clip"/>

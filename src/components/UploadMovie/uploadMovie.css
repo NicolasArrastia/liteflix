@@ -47,6 +47,7 @@
   color: aqua;
   letter-spacing: .3rem;
   margin: 20px 0 30px;
+  font-weight: 700;
 }
 
 .upload-movie__dropzone {
@@ -118,6 +119,37 @@
           align-items: center;
 }
 
+.upload-movie header {
+  position: relative;
+  width: 120%;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 5%;
+}
+
+.upload-movie header .liteflix {
+  font-size: 3rem;
+}
+
+.upload-movie header .profile-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#dropzone.loading {
+  border: none;
+  padding: 0;
+  width: clamp(400px, 75%, 800px);
+}
+
 #dropzone.loading > *:not(#loading-container) {
   display: none;
 }
@@ -132,6 +164,11 @@
   }
   .upload-movie__exit {
     display: block;
+  }
+  .upload-movie header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 /*# sourceMappingURL=uploadMovie.css.map */

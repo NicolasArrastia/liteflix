@@ -11,9 +11,13 @@ export default function AddMovie() {
     }
     return (
         <div onClick={toggleAddMovie} className="add-movie">
+            {/* <div className="add-movie__icon">
+                <div></div>
+                <div></div>
+            </div> */}
             <div className="add-movie__icon">
-                <div></div>
-                <div></div>
+                <div className="plus-icon">
+                </div>
             </div>
             <span className="add-movie__text">
                 agregar película

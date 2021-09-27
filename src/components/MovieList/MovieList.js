@@ -23,12 +23,21 @@ export default function MovieList() {
                 setMovieList(data.results.slice(0,4))
             })
             .catch(err=>console.log(err))
-            let list = localStorage.getItem('movies')
-            if(list === null)
-                console.log('es null')
-            else
-                setMyMovies(JSON.parse(list))
+            // let list = localStorage.getItem('movies')
+            // if(list === null)
+            //     console.log('es null')
+            // else
+            //     setMyMovies(JSON.parse(list))
+            loadLocal()
     }, [])
+
+    const loadLocal = () =>{
+        let list = localStorage.getItem('movies')
+        if(list === null)
+            console.log('es null')
+        else
+            setMyMovies(JSON.parse(list))
+    }
 
     const toggle = () =>{
         const selector = document.getElementById('category_list');
@@ -39,6 +48,7 @@ export default function MovieList() {
 
     const changeCategory = (a) =>{
         setCategory(a);
+        loadLocal()
         toggle();
     }
 

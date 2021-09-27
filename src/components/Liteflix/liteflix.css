@@ -11,14 +11,10 @@
 
 .liteflix__lite {
   font-weight: 700;
-  -webkit-animation: liteAnimation 2s ease-in 0s 1;
-          animation: liteAnimation 2s ease-in 0s 1;
 }
 
 .liteflix__flix {
   font-weight: 400;
-  -webkit-animation: flixAnimation 2s ease-in 0s 1;
-          animation: flixAnimation 2s ease-in 0s 1;
 }
 
 @-webkit-keyframes liteAnimation {

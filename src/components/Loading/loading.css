@@ -6,22 +6,51 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 10px 0;
+  width: 100%;
 }
 
 .loading-container .loading-bar {
+  position: relative;
   display: block;
-  width: 200px;
-  height: 5px;
-  border: 1px solid white;
+  width: 100%;
+  height: 2px;
+  margin: 10px 0;
+  background-color: grey;
 }
 
 .loading-container .loading-bar__progress {
+  position: absolute;
   display: block;
-  background-color: #fff;
-  width: 0%;
-  height: 100%;
-  -webkit-animation: loadingAnimation 1.5s ease 0s 1;
-          animation: loadingAnimation 1.5s ease 0s 1;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  height: 6px;
+  background-color: aqua;
+  -webkit-transition: width 0s linear 2s;
+  transition: width 0s linear 2s;
+}
+
+.loading-container .loading-bar__error {
+  background-color: red;
+  height: 8px;
+  -webkit-transition: width 0s linear 2s;
+  transition: width 0s linear 2s;
+}
+
+.loading-container .loading-text {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.loading-container .loading-text__success {
+  color: aqua;
+}
+
+.loading-container .loading-text__error {
+  color: red;
 }
 
 @-webkit-keyframes loadingAnimation {
@@ -44,20 +73,28 @@
 
 @-webkit-keyframes errorAnimation {
   0% {
+    background-color: aqua;
     width: 0%;
   }
+  50% {
+    background-color: aqua;
+  }
   100% {
-    width: 60%;
+    width: 100%;
     background-color: red;
   }
 }
 
 @keyframes errorAnimation {
   0% {
+    background-color: aqua;
     width: 0%;
   }
+  50% {
+    background-color: aqua;
+  }
   100% {
-    width: 60%;
+    width: 100%;
     background-color: red;
   }
 }
