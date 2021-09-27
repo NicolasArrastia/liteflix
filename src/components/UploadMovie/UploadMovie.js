@@ -13,7 +13,7 @@ export default function MyDropzone() {
     const [image,setImage]=useState('');
     const [loadingBar,setLoading]=useState(0);
     const [isError,setIsError]=useState(0);
-    
+
     const onDrop = useCallback((acceptedFiles) => {
         acceptedFiles.forEach((file) => {
             setLoading(0)
