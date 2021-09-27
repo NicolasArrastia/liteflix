@@ -23,6 +23,14 @@
   margin-left: 20px;
 }
 
+.header {
+  z-index: 10000;
+}
+
+.header * {
+  z-index: 10000;
+}
+
 @media (max-width: 576px) {
   .header__nav {
     -webkit-box-pack: justify;

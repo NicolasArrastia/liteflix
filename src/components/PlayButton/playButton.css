@@ -1,0 +1,24 @@
+.play-button {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.play-button svg {
+  -webkit-transform: translateX(0.5px);
+          transform: translateX(0.5px);
+  stroke-width: 1px;
+  stroke: white;
+}
+/*# sourceMappingURL=playButton.css.map */

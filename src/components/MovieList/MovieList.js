@@ -4,7 +4,8 @@ import React, {useState,useEffect} from 'react'
 import Movie from '../Movie/Movie';
 
 // Styles
-import '../../App.css'
+// import '../../App.css'
+
 
 const MOVIES = 'https://api.themoviedb.org/3/movie/popular?api_key=6f26fd536dd6192ec8a57e94141f8b20'
 
@@ -40,24 +41,26 @@ export default function MovieList() {
     return (
         <div>
             <span>
-                <span onClick={toggle}>
-                    MovieList
+                <span className="category-selector" onClick={toggle}>
+                    ver: {(category)?<span>mis películas</span>:<span>popular</span>}
                 </span>
             </span>
-            <ul id="category_selector">
-                <li onClick={(event)=>changeCategory(0)} >Populares</li>
-                <li onClick={(event)=>changeCategory(1)} >Mis películas</li>
+            <ul className="category-list" id="category_selector">
+                <li onClick={(event)=>changeCategory(0)}>Populares</li>
+                <li onClick={(event)=>changeCategory(1)}>Mis películas</li>
             </ul>
             {
             (category===1)?
             <ul>
-                {myMovies.map((data,i)=>{
+                {
+                myMovies.map((data,i)=>{
                     return(
                         <li key={i}>
                             <Movie isLocal={1} movieData={data}></Movie>
                         </li>
                     )
-                })}
+                })
+                }
             </ul>
             :
             <ul>

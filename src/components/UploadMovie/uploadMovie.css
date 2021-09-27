@@ -1,1 +1,8 @@
-/* No CSS *//*# sourceMappingURL=uploadMovie.css.map */
+.upload-movie {
+  display: none;
+}
+
+.upload-movie--active {
+  display: block;
+}
+/*# sourceMappingURL=uploadMovie.css.map */

@@ -1,4 +1,33 @@
 .menu-icon {
-  display: none;
+  cursor: pointer;
+  padding: 3px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 35px;
+  height: 35px;
+}
+
+.menu-icon > * {
+  height: 2px;
+  background-color: #fff;
+}
+
+.menu-icon > :nth-child(3) {
+  width: 63%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: none;
+  }
 }
 /*# sourceMappingURL=menu.css.map */

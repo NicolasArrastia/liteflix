@@ -22,7 +22,7 @@ export default function App() {
     .then(res=>res.json())
     .then(data=> {
       setMovieName(data.results[0].title)
-      setMovieImage('https://image.tmdb.org/t/p/w500'+data.results[0].backdrop_path)
+      setMovieImage('https://image.tmdb.org/t/p/original'+data.results[0].backdrop_path)
     })
     .catch(err=>{
       console.log(err);
@@ -36,12 +36,14 @@ export default function App() {
   return (
     <div>
         <Header></Header>
-        <img src={movieImage} alt={movieName}/>
+        <div className="background-image">
+          <img src={movieImage} alt={movieName}/>
+        </div>
         <main>
           <MainMovie movieTitle={movieName}></MainMovie>
           <MovieList></MovieList>
-          <UploadMovie></UploadMovie>
         </main>
+        <UploadMovie></UploadMovie>
     </div>
   )
 }

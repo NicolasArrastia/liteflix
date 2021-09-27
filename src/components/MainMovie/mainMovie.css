@@ -1,4 +1,20 @@
+.main-movie {
+  margin-top: 40vh;
+  width: clamp(600px, 60%, 1000px);
+}
+
+.main-movie__original {
+  font-size: 2rem;
+}
+
 .main-movie__original > span {
   font-weight: 700;
+}
+
+.main-movie__title {
+  font-size: 10rem;
+  color: aqua;
+  font-weight: 700;
+  letter-spacing: .5rem;
 }
 /*# sourceMappingURL=mainMovie.css.map */

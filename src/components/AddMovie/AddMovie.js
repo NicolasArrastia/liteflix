@@ -7,7 +7,7 @@ export default function AddMovie() {
     function toggleAddMovie (e){
         e.preventDefault()
         const element=document.getElementById('upload_movie')
-        element.classList.toggle('hidden')
+        element.classList.toggle('upload-movie--active')
         // console.log(element)
     }
     return (

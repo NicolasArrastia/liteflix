@@ -6,10 +6,7 @@ import './notifications.css'
 export default function Notifications() {
     return (
         <div className="notification-icon">
-            Notification
-            <div></div>
-            <div></div>
-            <div></div>
+            <img src="./img/bell.svg"/>
         </div>
     )
 }

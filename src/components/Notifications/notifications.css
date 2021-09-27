@@ -1,4 +1,29 @@
 .notification-icon {
-  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.notification-icon::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: aqua;
+}
+
+.notification-icon img {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .notification-icon {
+    display: none;
+  }
 }
 /*# sourceMappingURL=notifications.css.map */

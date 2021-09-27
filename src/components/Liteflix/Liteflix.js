@@ -5,9 +5,9 @@ import './liteflix.css'
 
 export default function Liteflix() {
     return (
-        <div className="liteflix">
+        <a href="/" className="liteflix">
             <span className="liteflix__lite">Lite</span>
             <span className="liteflix__flix">flix</span>
-        </div>
+        </a>
     )
 }

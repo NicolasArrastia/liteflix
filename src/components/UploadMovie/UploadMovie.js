@@ -1,6 +1,9 @@
 import React, {useState, useCallback} from 'react'
 import {useDropzone} from 'react-dropzone'
 
+// Styles
+import './uploadMovie.css'
+
 export default function MyDropzone() {
     const [image,setImage]=useState('');
     const [fileName,setFileName]=useState('');
@@ -44,7 +47,7 @@ export default function MyDropzone() {
     }
     
     return (
-        <fieldset id="upload_movie">
+        <div id="upload_movie" className="upload-movie">
             <div {...getRootProps()}>
                 <input {...getInputProps()} />
                 <p>Drag 'n' drop some files here, or click to select files</p>
@@ -53,6 +56,6 @@ export default function MyDropzone() {
             {}
             <input id="movie_title" type="text" placeholder="título"></input>
             <div onClick={sendMovie}>enviar</div>
-        </fieldset>
+        </div>
     )
 }
