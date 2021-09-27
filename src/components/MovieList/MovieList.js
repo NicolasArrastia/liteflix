@@ -4,6 +4,7 @@ import React, {useState,useEffect} from 'react'
 import Movie from '../Movie/Movie';
 
 // Styles
+import './movieList.css'
 // import '../../App.css'
 
 
@@ -13,6 +14,7 @@ export default function MovieList() {
     const [movieList,setMovieList] = useState([]);
     const [myMovies, setMyMovies] = useState([]);
     const [category, setCategory] = useState(0);
+    const categories = ['Popular','Mis películas']
 
     useEffect(() => {
         fetch(MOVIES)
@@ -29,8 +31,10 @@ export default function MovieList() {
     }, [])
 
     const toggle = () =>{
-        const selector = document.getElementById('category_selector');
-        selector.classList.toggle("hidden");
+        const selector = document.getElementById('category_list');
+        selector.classList.toggle("category-list--active");
+        const arrowIcon = document.getElementById('category_arrow');
+        arrowIcon.classList.toggle('rotate')
     }
 
     const changeCategory = (a) =>{
@@ -39,15 +43,30 @@ export default function MovieList() {
     }
 
     return (
-        <div>
+        <div className="movie-list">
             <span>
                 <span className="category-selector" onClick={toggle}>
-                    ver: {(category)?<span className="category-selector__category">mis películas</span>:<span className="category-selector__category">popular</span>}<span className="category-selector__arrow"></span>
+                    ver: 
+                    {(category)?<span className="category-selector__category">mis películas</span>:<span className="category-selector__category">popular</span>}
+                    <span id="category_arrow" className="category-selector__arrow"></span>
                 </span>
             </span>
-            <ul className="category-list" id="category_selector">
-                <li onClick={(event)=>changeCategory(0)}>Populares</li>
-                <li onClick={(event)=>changeCategory(1)}>Mis películas</li>
+            <ul className="category-list" id="category_list">
+                {categories.map((data,i)=>{
+                    return(
+                        <li key={i} onClick={(event)=>changeCategory(i)}>
+                            {data}
+                            {(i===category)?<div className="check-icon"><div></div><div></div></div>:null}
+                        </li>
+                    )
+                })}
+                {/* <li onClick={(event)=>changeCategory(0)}>
+                    Populares
+                    
+                </li>
+                <li onClick={(event)=>changeCategory(1)}>
+                    Mis películas
+                </li> */}
             </ul>
             {
             (category===1)?

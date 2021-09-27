@@ -1,4 +1,4 @@
-.category-list {
+.movie-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6,12 +6,141 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  visibility: hidden;
-  border: 1px solid red;
-  border-radius: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.category-selector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: .3rem;
+}
+
+.category-selector__category {
+  font-weight: 700;
+}
+
+.category-selector__arrow {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.category-selector__arrow::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+}
+
+.category-selector__arrow::after {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  height: 50%;
+  width: 2px;
+  background-color: #fff;
+  display: block;
+}
+
+.category-list {
+  height: 0;
+  width: 300px;
+  padding: 20px;
+  background-color: transparent;
+  -webkit-transition: .4s ease;
+  transition: .4s ease;
+}
+
+.category-list li {
+  color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.category-list li:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.category-list .check-icon * {
+  background-color: transparent;
+}
+
+.category-list--active {
+  margin: 15px 0;
+  background-color: #242424;
+  height: auto;
+  -webkit-transition: .4s ease .2s;
+  transition: .4s ease .2s;
+  -webkit-transition: margin .2 ease .5s;
+  transition: margin .2 ease .5s;
+}
+
+.category-list--active * {
+  -webkit-transition: .4s ease .2s;
+  transition: .4s ease .2s;
+}
+
+.category-list--active li {
+  color: white;
+}
+
+.category-list--active .check-icon * {
+  background-color: white;
 }
 
 .category-list--active {
   display: block;
+}
+
+.rotate {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.check-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+}
+
+.check-icon * {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  background-color: #fff;
+  display: block;
+}
+
+.check-icon > :nth-child(1) {
+  width: 40%;
+  height: 2px;
+}
+
+.check-icon > :nth-child(2) {
+  height: 80%;
+  width: 2px;
 }
 /*# sourceMappingURL=movieList.css.map */
