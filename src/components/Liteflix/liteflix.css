@@ -5,16 +5,20 @@
   letter-spacing: 0.4rem;
 }
 
+.liteflix > * {
+  display: inline-block;
+}
+
 .liteflix__lite {
   font-weight: 700;
-  -webkit-animation: liteAnimation 1.5s ease 0s 1;
-          animation: liteAnimation 1.5s ease 0s 1;
+  -webkit-animation: liteAnimation 2s ease-in 0s 1;
+          animation: liteAnimation 2s ease-in 0s 1;
 }
 
 .liteflix__flix {
   font-weight: 400;
-  -webkit-animation: flixAnimation 1.5s ease 0s 1;
-          animation: flixAnimation 1.5s ease 0s 1;
+  -webkit-animation: flixAnimation 2s ease-in 0s 1;
+          animation: flixAnimation 2s ease-in 0s 1;
 }
 
 @-webkit-keyframes liteAnimation {

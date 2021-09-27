@@ -48,6 +48,8 @@ export default function MovieList() {
                 <li onClick={(event)=>changeCategory(0)} >Populares</li>
                 <li onClick={(event)=>changeCategory(1)} >Mis películas</li>
             </ul>
+            {
+            (category===1)?
             <ul>
                 {myMovies.map((data,i)=>{
                     return(
@@ -56,6 +58,9 @@ export default function MovieList() {
                         </li>
                     )
                 })}
+            </ul>
+            :
+            <ul>
                 {movieList.map((data,i)=>{
                     return(
                         <li key={i}>
@@ -64,6 +69,7 @@ export default function MovieList() {
                     )
                 })}
             </ul>
+            }
         </div>
     )
 }

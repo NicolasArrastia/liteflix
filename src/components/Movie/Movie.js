@@ -1,4 +1,7 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+
+// Styles
+import './movie.css'
 
 export default function Movie(props) {
     const movie = props.movieData;
@@ -10,11 +13,11 @@ export default function Movie(props) {
     }
 
     return (
-        <div>
-            <p>
+        <div className="movie-container">
+            <p className="movie-container__title">
                 {movie.title}
             </p>
-            <img src={movieImage} alt={movie.title}/>
+            <img className="movie-container__image" src={movieImage} alt={movie.title}/>
         </div>
     )
 }

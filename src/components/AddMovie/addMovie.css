@@ -6,5 +6,48 @@
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  font-size: 2.5rem;
+  border: 1px solid blue;
+}
+
+.add-movie__icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border: 1px solid red;
+}
+
+.add-movie__icon > * {
+  position: absolute;
+  background-color: #fff;
+}
+
+.add-movie__icon > :nth-child(1) {
+  height: 1px;
+  right: 4px;
+  left: 4px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.add-movie__icon > :nth-child(2) {
+  width: 1px;
+  top: 0px;
+  bottom: 0px;
+  left: 50%;
+  background-color: green;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 100%;
+}
+
+@media (max-width: 576px) {
+  .add-movie__icon {
+    border: 1px solid white;
+  }
+  .add-movie__text {
+    display: none;
+  }
 }
 /*# sourceMappingURL=addmovie.css.map */

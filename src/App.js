@@ -8,6 +8,7 @@ import './App.css';
 import Header from './components/Header/Header'
 import UploadMovie from './components/UploadMovie/UploadMovie'
 import MovieList from './components/MovieList/MovieList'
+import MainMovie from './components/MainMovie/MainMovie';
 
 const BANNER = 'https://api.themoviedb.org/3/movie/now_playing?api_key=6f26fd536dd6192ec8a57e94141f8b20'
 
@@ -36,8 +37,11 @@ export default function App() {
     <div>
         <Header></Header>
         <img src={movieImage} alt={movieName}/>
-        <UploadMovie></UploadMovie>
-        <MovieList></MovieList>
+        <main>
+          <MainMovie movieTitle={movieName}></MainMovie>
+          <MovieList></MovieList>
+          <UploadMovie></UploadMovie>
+        </main>
     </div>
   )
 }
