@@ -10,6 +10,7 @@ const MOVIES = 'https://api.themoviedb.org/3/movie/popular?api_key=6f26fd536dd61
 
 export default function MovieList() {
     const [movieList,setMovieList] = useState([]);
+    const [myMovies, setMyMovies] = useState([]);
     const [category, setCategory] = useState(0);
 
     useEffect(() => {
@@ -19,27 +20,21 @@ export default function MovieList() {
                 setMovieList(data.results.slice(0,4))
             })
             .catch(err=>console.log(err))
+            let list = localStorage.getItem('movies')
+            if(list === null)
+                console.log('es null')
+            else
+                setMyMovies(JSON.parse(list))
     }, [])
 
-    const toggle = (e) =>{
-        e.preventDefault()
-        const selector = document.getElementById('category_selector')
-        selector.classList.toggle("hidden")
-        console.log('toggle')
+    const toggle = () =>{
+        const selector = document.getElementById('category_selector');
+        selector.classList.toggle("hidden");
     }
 
     const changeCategory = (a) =>{
-        console.log(a)
-    }
-
-    const getLocalStorage = () => {
-        let list=[];
-        list = localStorage.getItem('movies')
-        console.log(list)
-    }
-
-    const toggleMovies = () => {
-        console.log('a')
+        setCategory(a);
+        toggle();
     }
 
     return (
@@ -48,17 +43,24 @@ export default function MovieList() {
                 <span onClick={toggle}>
                     MovieList
                 </span>
-                <ul id="category_selector">
-                    <li onClick={(event)=>changeCategory(0)} >Populares</li>
-                    <li onClick={(event)=>changeCategory(1)} >Mis películas</li>
-                </ul>
             </span>
+            <ul id="category_selector">
+                <li onClick={(event)=>changeCategory(0)} >Populares</li>
+                <li onClick={(event)=>changeCategory(1)} >Mis películas</li>
+            </ul>
             <ul>
+                {myMovies.map((data,i)=>{
+                    return(
+                        <li key={i}>
+                            <Movie isLocal={1} movieData={data}></Movie>
+                        </li>
+                    )
+                })}
                 {movieList.map((data,i)=>{
                     return(
-                        <div key={i}>
+                        <li key={i}>
                             <Movie movieData={data}></Movie>
-                        </div>
+                        </li>
                     )
                 })}
             </ul>

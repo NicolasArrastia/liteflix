@@ -12,6 +12,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   list-style: none;
+  text-decoration: none;
 }
 
 body {
@@ -22,5 +23,16 @@ body {
 
 .hidden {
   visibility: hidden;
+}
+
+.plus-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.plus-icon:nth-child(1) {
+  width: 100%;
+  height: 10px;
+  background-color: #fff;
 }
 /*# sourceMappingURL=App.css.map */

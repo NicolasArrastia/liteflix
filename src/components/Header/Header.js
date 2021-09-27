@@ -7,15 +7,19 @@ import Menu from '../Menu/Menu'
 import Notifications from '../Notifications/Notifications'
 import Profile from '../Profile/Profile'
 
+// Styles
+import './header.css'
 
 export default function Header() {
     return (
         <header className="header">
-            <Liteflix></Liteflix>
-            <AddMovie></AddMovie>
-            <Menu></Menu>
-            <Notifications></Notifications>
-            <Profile></Profile>
+            <nav className="header__nav">
+                <Liteflix></Liteflix>
+                <AddMovie></AddMovie>
+                <Menu></Menu>
+                <Notifications></Notifications>
+                <Profile></Profile>
+            </nav>
         </header>
     )
 }

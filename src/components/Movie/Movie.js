@@ -1,12 +1,20 @@
 import React from 'react'
 
 export default function Movie(props) {
+    const movie = props.movieData;
+    let movieImage = '';
+    if (props.isLocal){
+        movieImage=movie.image
+    }else{
+        movieImage='https://image.tmdb.org/t/p/w500'+movie.backdrop_path
+    }
+
     return (
         <div>
             <p>
-                {props.movieData.title}
+                {movie.title}
             </p>
-            <img src={'https://image.tmdb.org/t/p/w500'+props.movieData.backdrop_path} alt={props.movieData.title}/>
+            <img src={movieImage} alt={movie.title}/>
         </div>
     )
 }

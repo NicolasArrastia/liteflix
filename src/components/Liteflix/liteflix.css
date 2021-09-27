@@ -1,0 +1,71 @@
+.liteflix {
+  color: aqua;
+  font-size: 3.8rem;
+  display: inline-block;
+  letter-spacing: 0.4rem;
+}
+
+.liteflix__lite {
+  font-weight: 700;
+  -webkit-animation: liteAnimation 1.5s ease 0s 1;
+          animation: liteAnimation 1.5s ease 0s 1;
+}
+
+.liteflix__flix {
+  font-weight: 400;
+  -webkit-animation: flixAnimation 1.5s ease 0s 1;
+          animation: flixAnimation 1.5s ease 0s 1;
+}
+
+@-webkit-keyframes liteAnimation {
+  0% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    color: transparent;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    color: aqua;
+  }
+}
+
+@keyframes liteAnimation {
+  0% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    color: transparent;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    color: aqua;
+  }
+}
+
+@-webkit-keyframes flixAnimation {
+  0% {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    color: transparent;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    color: aqua;
+  }
+}
+
+@keyframes flixAnimation {
+  0% {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    color: transparent;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    color: aqua;
+  }
+}
+/*# sourceMappingURL=liteflix.css.map */
