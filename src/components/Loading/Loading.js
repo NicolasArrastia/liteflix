@@ -29,7 +29,7 @@ export default function Loading(props) {
             <div className="loading-bar">
                 <div id="progress_bar" className={"loading-bar__progress "+(isErr?'loading-bar__error':'')}></div>
             </div>
-            <span>
+            <span className="loading-text">
                 {(finished)?
                 <span>{(isErr)?<span className="loading-text__error">Reintentar</span>:<span className="loading-text__success">¡Listo!</span>}</span>
                 :

@@ -40,9 +40,8 @@
 }
 
 .loading-container .loading-text {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .loading-container .loading-text__success {

@@ -9,7 +9,10 @@ import './movie.css'
 export default function Movie(props) {
     const movie = props.movieData;
     let movieImage = '';
+    let movieTitle = movie.title;
     let releaseDate=''; 
+
+    // If it's a Local movie this will prevent an error
     if (props.isLocal){
         movieImage=movie.image;
     }else{
@@ -17,15 +20,21 @@ export default function Movie(props) {
         movieImage='https://image.tmdb.org/t/p/w500'+movie.backdrop_path
     }
 
+    // If the movie title is excesively long
+    if(movieTitle.length>16){
+        movieTitle=movieTitle.substring(0,16).concat('...')
+    }
+
     return (
         <div className="movie-container">
             <PlayButton></PlayButton>
             <p className="movie-container__title">
-                {movie.title}
+                {movieTitle}
             </p>
             <img className="movie-container__image" src={movieImage} alt={movie.title}/>
             <div className="movie-container__details">
                 {
+                    // And this will also prevent an error if it's a local movie
                     (props.isLocal)?
                     null
                     :

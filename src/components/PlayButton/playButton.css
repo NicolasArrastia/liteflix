@@ -1,4 +1,5 @@
 .play-button {
+  cursor: pointer;
   width: 30px;
   height: 30px;
   display: -webkit-box;
@@ -13,6 +14,18 @@
   border: 1px solid white;
   padding: 5px;
   border-radius: 50%;
+}
+
+.play-button:hover {
+  border-color: black;
+  background-color: aqua;
+  -webkit-transition: background-color .4s ease;
+  transition: background-color .4s ease;
+}
+
+.play-button:hover > svg {
+  fill: black;
+  stroke: black;
 }
 
 .play-button svg {

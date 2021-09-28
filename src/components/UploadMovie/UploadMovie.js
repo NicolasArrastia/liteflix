@@ -73,7 +73,8 @@ export default function MyDropzone() {
         e.preventDefault()
         const element=document.getElementById('upload_movie')
         element.classList.toggle('upload-movie--active')
-
+        // Because the user is closing the window and do not want to save a movie
+        setImage('');
         setLoading(0)
         // const loadBar = document.getElementById('loading-container')
         // loadBar.classList.toggle('hidden')

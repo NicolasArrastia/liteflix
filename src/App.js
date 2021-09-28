@@ -17,7 +17,8 @@ export default function App() {
   const [movieName,setMovieName] = useState();
   const [movieImage,setMovieImage] = useState();
   
-  useEffect(() => {    
+  useEffect(() => {
+    // Fetching data so we can render the info
     fetch(BANNER)
     .then(res=>res.json())
     .then(data=> {
@@ -39,7 +40,7 @@ export default function App() {
         <Header></Header>
         <div className="background-image">
           <img src={movieImage} alt={movieName}/>
-          <div></div>
+          <div className="shadow"></div>
         </div>
         <main>
           <MainMovie movieTitle={movieName}></MainMovie>

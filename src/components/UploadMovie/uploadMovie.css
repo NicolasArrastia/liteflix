@@ -26,7 +26,7 @@
       -ms-flex-align: center;
           align-items: center;
   width: clamp(400px, 75%, 800px);
-  padding: 0 60px;
+  padding: 20px 60px 0;
   background: #242424;
 }
 
@@ -75,6 +75,10 @@
   border: none;
   border-bottom: 1px solid white;
   margin-bottom: 40px;
+}
+
+.upload-movie input[type="text"]:focus {
+  outline: none;
 }
 
 .upload-movie__send,
@@ -147,7 +151,7 @@
 #dropzone.loading {
   border: none;
   padding: 0;
-  width: clamp(400px, 75%, 800px);
+  width: clamp(300px, 75%, 800px);
 }
 
 #dropzone.loading > *:not(#loading-container) {

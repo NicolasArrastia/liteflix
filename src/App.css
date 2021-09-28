@@ -66,7 +66,7 @@ body {
   height: clamp(400px, 100vh, 100vw);
 }
 
-.background-image div {
+.background-image .shadow {
   position: absolute;
   top: calc(clamp(400px,100vh,100vw)+50px);
   width: 100%;
@@ -92,6 +92,10 @@ main {
 
 main * {
   z-index: 10000;
+}
+
+body#body.upload-mode {
+  height: 100vh;
 }
 
 @media (max-width: 768px) {
